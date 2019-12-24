@@ -3,17 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 export default class App extends Component {
-  constructor(){
-    super()
-    this.state={
-      checkAll:false,
-      check1:false,check2:false,
-       check4:false,check3:false,
-    }
-  }
-
-
-
+  
   render() {
     return (
       <div style={{width:"100%"}}>
