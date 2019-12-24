@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default class App extends Component {
+  constructor(){
+    super()
+    this.state={
+      checkAll:false,
+      check1:false,check2:false,
+       check4:false,check3:false,
+    }
+  }
 
-export default App;
+
+
+  render() {
+    return (
+      <div style={{width:"100%"}}>
+      <div className="row">
+       <div className="col-sm-4">
+    <div className="card">
+    <div className="card-body">
+      Indeterminate Checkbox
+    </div>
+
+      <div className="card-body11">
+
+       <label className="container1">Select All
+          <input type="checkbox" className="select-all" id="select-all"  />
+          <span className="checkmark" />
+        </label>
+        <label className="container1">First
+          <input type="checkbox" className="select1" id="select1"  />
+          <span className="checkmark" />
+        </label>
+        <label className="container1">Second
+          <input type="checkbox" className="select2" id="select2"  />
+          <span className="checkmark" />
+        </label>
+        <label className="container1">Third
+          <input type="checkbox" className="select3" id="select3"  />
+          <span className="checkmark" />
+        </label>
+        <label className="container1">Fourth
+          <input type="checkbox" className="select4" id="select4"  />
+          <span className="checkmark" />
+        </label>
+      </div></div></div></div></div>
+    )
+  }
+}
