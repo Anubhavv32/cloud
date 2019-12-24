@@ -1,10 +1,38 @@
 import React, { Component } from 'react';
+import Single from './Componnets/single';
+import Select from './Componnets/select';
 
 import './App.css';
 
 export default class App extends Component {
+  constructor(){
+    super()
+    this.state={
+      selectAll:{1:false,2:false,3:false,4:false}
+    }
+  }
+  clickAll=(bool)=>{
+    console.log(bool)
+    let selectAll = this.state.selectAll
+    selectAll[1]=bool
+    selectAll[2]=bool
+    selectAll[3]=bool
+    selectAll[4]=bool
   
+this.setState({selectAll})
+    // this.setState({checkAll:e.target.value},()=>{
+    //   console.log(this.check)
+    // })
+  }
+ 
+  clickSingle=(id,bool)=>{
+    let selectAll = this.state.selectAll
+    selectAll[id] = bool
+    this.setState({selectAll})
+  }
+ 
   render() {
+   
     return (
       <div style={{width:"100%"}}>
       <div className="row">
@@ -13,29 +41,11 @@ export default class App extends Component {
     <div className="card-body">
       Indeterminate Checkbox
     </div>
-
+<Select selectAll={this.state.selectAll} click={this.clickAll}/>
+<Single selectAll={this.state.selectAll} click={this.clickSingle} />
       <div className="card-body11">
 
-       <label className="container1">Select All
-          <input type="checkbox" className="select-all" id="select-all"  />
-          <span className="checkmark" />
-        </label>
-        <label className="container1">First
-          <input type="checkbox" className="select1" id="select1"  />
-          <span className="checkmark" />
-        </label>
-        <label className="container1">Second
-          <input type="checkbox" className="select2" id="select2"  />
-          <span className="checkmark" />
-        </label>
-        <label className="container1">Third
-          <input type="checkbox" className="select3" id="select3"  />
-          <span className="checkmark" />
-        </label>
-        <label className="container1">Fourth
-          <input type="checkbox" className="select4" id="select4"  />
-          <span className="checkmark" />
-        </label>
+       
       </div></div></div></div></div>
     )
   }
